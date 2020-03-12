@@ -26,7 +26,7 @@ const Footer = class extends React.Component {
                   <ul className="menu-list">
                     <li>
                       <Link to="/" className="navbar-item">
-                        Bailey
+                        Baileyt
                       </Link>
                     </li>
                     <li>
