@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import logo from '../img/makeshift_icon.png'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -12,82 +11,109 @@ const Navbar = class extends React.Component {
     }
   }
 
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            })
-      }
-    )
-  }
-
   render() {
     return (
       <nav
-        className="navbar is-transparent"
+        className="navbar"
         role="navigation"
         aria-label="main-navigation"
       >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
+        <div className="container" >
+            <span aria-hidden="true" style={{ width: "70px" }}></span>
+            <div className="navbar-brand">
+                <Link to="/" className="navbar-item" title="Logo">
+                <img src={logo} alt="MakeShift" />
+                    <font color="#3A3A3A"><b>MakeShift</b></font>
+                </Link>
+            
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        
+        </div>
           <div
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
+            <div className="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Features
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            Product Overview
+                        </a>
+                        <a class="navbar-item">
+                            Manager Features
+                        </a>
+                        <a class="navbar-item">
+                            Employee Features
+                        </a>
+                        <a class="navbar-item">
+                            Time + Attendance
+                        </a>
+                        <a class="navbar-item">
+                            Integrations
+                        </a>
+                    </div>
+                </div>
+
+              <Link className="navbar-item" to="/TEMP">
+                Benefits
               </Link>
-              <Link className="navbar-item" to="/products">
-                Products
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Industries
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            Hospitality
+                        </a>
+                        <a class="navbar-item">
+                            Golf
+                        </a>
+                        <a class="navbar-item">
+                            Recreation
+                        </a>
+                        <a class="navbar-item">
+                            Restaurants
+                        </a>
+                        <a class="navbar-item">
+                            Healthcare
+                        </a>
+                        <hr class="navbar-divider"></hr>
+                        <a class="navbar-item">
+                            All Industries
+                        </a>
+                        
+                    </div>
+                </div>
+
+              <Link className="navbar-item" to="/TEMP">
+                Support
               </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
+              <Link className="navbar-item" to="/TEMP">
+                Pricing
               </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
+              <Link className="navbar-item" to="/TEMP">
+                Log In
               </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
+              <Link className="navbar-item" to="/TEMP">
+                Contact Us
+              </Link>
+              <Link className="navbar-item" to="/TEMP">
+                <b>Get Started</b>
               </Link>
             </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
-            </div>
+            
+            <span aria-hidden="true" style={{ width: "70px" }}></span>
+            
           </div>
         </div>
       </nav>
@@ -96,3 +122,16 @@ const Navbar = class extends React.Component {
 }
 
 export default Navbar
+{/*
+var navbar_style={
+    position: "fixed",
+    boxShadow: "0px 8px 10px rgba(102, 116, 129, 0.12)",
+    width: "100%",
+    background: "#FFFFFF",
+    height: "94px",    
+}
+
+var item_style={
+    color: "#313840"
+}
+*/}
