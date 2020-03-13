@@ -15,6 +15,7 @@ export const IndexPageTemplate = ({
   description,
   intro,
 }) => (
+<body class="has-navbar-fixed-top">
   <div>
     <div
       className="full-width-image margin-top-0"
@@ -112,6 +113,7 @@ export const IndexPageTemplate = ({
       </div>
     </section>
   </div>
+</body>
 )
 
 IndexPageTemplate.propTypes = {
